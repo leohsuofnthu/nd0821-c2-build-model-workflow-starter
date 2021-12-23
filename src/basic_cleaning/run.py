@@ -33,6 +33,7 @@ def go(args):
     df["last_review"] = pd.to_datetime(df["last_review"])
 
     # limit the range of longitude & latitude
+    logger.info("Limit the range of 'longitude' and 'latitude'")
     idx = df["longitude"].between(-74.25, -73.50) & df["latitude"].between(40.5, 41.2)
     df = df[idx].copy()
 
